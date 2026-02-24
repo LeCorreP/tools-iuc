@@ -8,6 +8,7 @@ import requests
 import zipfile
 from collections import OrderedDict
 
+
 def download_and_unpack_zip(url, dest_dir):
 
     try:
@@ -41,7 +42,9 @@ def download_and_unpack_zip(url, dest_dir):
         print(f"Unexpected error: {e}")
         sys.exit(1)
 
+
 def main():
+
     parser = argparse.ArgumentParser()
     parser.add_argument('output_directory', type=str)
     parser.add_argument('json', type=str)
@@ -73,6 +76,7 @@ def main():
     except Exception as e:
         print(f"Error writing JSON: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
