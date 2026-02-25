@@ -18,17 +18,17 @@
 #set value = "Enzbert_model" + "_" + now
 #set path = str($output_dir)
 {
-    "data_tables": {
-      "enzbert": [
-        {
-          "value": "$value", 
-          "name": "Enzbert_model",
-          "path": "$path"
-          
-        }
-      ]
-    }
+  "data_tables": {
+    "enzbert": [
+      {
+        "value": "$value", 
+        "name": "Enzbert_model",
+        "path": "$path"
+        
+      }
+    ]
   }
+}
     ]]></configfile>
     </configfiles>
     <inputs>
