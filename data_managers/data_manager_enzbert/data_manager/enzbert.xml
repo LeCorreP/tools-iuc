@@ -14,7 +14,7 @@
     <configfiles>
         <configfile name="dmjson"><![CDATA[#slurp
             #import datetime
-            #set now = datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
+            #set now = datetime.datetime.now().strftime("%Y-%m-%d")
             #set value = "Enzbert_model" + "_" + now
             #set path = str($output_dir)
             {
@@ -39,6 +39,9 @@
         <test>
             <param name="output_dir" value="enzbert"/>
             <output name="output_file" file="out.json"/>
+                <assert_contents>
+                    <has_text_matching expression='"value": "Enzbert_model_\d\d\d\d-\d\d-\d\d"'/>
+                </assert_contents>
         </test>
     </tests>
     <help><![CDATA[
