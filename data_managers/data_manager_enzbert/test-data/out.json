@@ -2,9 +2,10 @@
     "data_tables": {
       "enzbert": [
         {
+          "value": "Enzbert_model", 
           "name": "Enzbert_model",
-          "path": "enzbert/",
-          "value": "Enzbert_model"
+          "path": "enzbert"
+          
         }
       ]
     }
