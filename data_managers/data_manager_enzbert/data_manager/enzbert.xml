@@ -28,8 +28,7 @@
       }
     ]
   }
-}
-    ]]></configfile>
+}]]></configfile>
     </configfiles>
     <inputs>
         <param name="output_dir" type="text" label="Output Directory" value=""/>    
@@ -40,16 +39,12 @@
     <tests>
         <test>
             <param name="output_dir" value="enzbert"/>
-            <output name="output_file" file="out.json"/>
-        </test>
-        <test>
-            <output name="output_file">
+            <output name="output_file" file="out.json" compare="sim_size">
                 <assert_contents>
-                    <has_text_matching expression='"value": "Enzbert_model_\d\d\d\d-\d\d-\d\d"'/>
+                    <has_text_matching expression='"value": "Enzbert_model_\d{4}-\d{2}-\d{2}"'/>
                 </assert_contents>
             </output>
-        </test>
-        
+        </test>        
     </tests>
     <help><![CDATA[
         This data manager retrieves Enzbert model data.
