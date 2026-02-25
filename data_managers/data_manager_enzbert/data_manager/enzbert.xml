@@ -13,10 +13,10 @@
     ]]></command>
     <configfiles>
         <configfile name="dmjson"><![CDATA[#slurp
-            #import datetime
-            #set now = datetime.datetime.now().strftime("%Y-%m-%d")
-            #set value = "Enzbert_model" + "_" + now
-            #set path = str($output_dir)
+#import datetime
+#set now = datetime.datetime.now().strftime("%Y-%m-%d")
+#set value = "Enzbert_model" + "_" + now
+#set path = str($output_dir)
 {
     "data_tables": {
       "enzbert": [
