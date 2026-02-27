@@ -9,8 +9,8 @@
         <requirement type="package" version="@TOOL_VERSION@">enzbert</requirement>
     </requirements>
     <command detect_errors="exit_code"><![CDATA[
-        enzbert --fasta_path "$fasta_file" --top_k "$top_k" --path_model "$path_model" --chosen_model "$chosen_model" --max_seq_length "$max_seq_length" --output_attentions_scores &&
-        cat attentions_scores.csv
+        enzbert --fasta_path "$fasta_file" --top_k "$top_k" --path_model "$path_model" --chosen_model "$chosen_model" --max_seq_length "$max_seq_length" &&
+        cat predictions.csv > '$predictions'
     ]]></command>
     <inputs>
         <param argument="fasta_file" type="data" format="fasta,txt" label="File with the fasta sequence" />
@@ -24,18 +24,16 @@
         </param>      
     </inputs>
     <outputs>
-        <data name="outpred" label="Enzbert predictions" format="csv" />
-        <data name="outattention" label="Enzbert attention scores" format="csv" />
+        <data name="predictions" format="csv" label="Enzbert predictions" />
     </outputs>
     <tests>
-        <test expect_num_outputs="2">
+        <test expect_num_outputs="1">
             <param name="fasta_file" value="example.fasta" />
             <param name="path_model" value="/home/plecorre/tfpc_complet/data/"/>
             <param name="max_seq_length" value="2048" />
             <param name="top_k" value="3" />
             <param name="chosen_model" value="EnzBert_SwissProt_2021_04"/>
-            <output name="outpred" file="predictions.csv" ftype="csv" compare="sim_size"/>
-            <output name="outattention" file="attentions_scores.csv" ftype="csv" compare="sim_size"/>
+            <output name="predictions" file="predictions.csv"/>
         </test>
     </tests>
     <help><![CDATA[
