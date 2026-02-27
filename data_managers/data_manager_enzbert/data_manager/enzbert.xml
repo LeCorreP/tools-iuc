@@ -6,10 +6,10 @@
     <command detect_errors="exit_code"><![CDATA[       
         set -o pipefail;
 
-        mkdir '$output_dir' && cd '$output_dir' &&
-        wget -O 'data.zip' 'https://zenodo.org/records/10041121/files/data.zip?download=1' && unzip 'data.zip' &&
-        if [[ ! -d 'data' ]]; then >&2 echo "data missing"; exit 1; fi &&
-        cp '$dmjson' '$output_file' 
+        mkdir "$output_dir" && cd "$output_dir" &&
+        wget -O "data.zip" "https://zenodo.org/records/10041121/files/data.zip?download=1" && unzip "data.zip" &&
+        if [[ ! -d "data" ]]; then >&2 echo "data missing"; exit 1; fi &&
+        cp "$dmjson" "$output_file" 
     ]]></command>
     <configfiles>
         <configfile name="dmjson"><![CDATA[#slurp
